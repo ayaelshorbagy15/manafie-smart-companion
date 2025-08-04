@@ -26,11 +26,15 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					light: 'hsl(var(--secondary-light))',
+					dark: 'hsl(var(--secondary-dark))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -61,7 +65,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold-accent))',
+					light: 'hsl(var(--gold-light))'
 				}
+			},
+			fontFamily: {
+				primary: ['Inter', 'sans-serif'],
+				arabic: ['Amiri', 'serif']
+			},
+			backgroundImage: {
+				'gradient-spiritual': 'var(--gradient-spiritual)',
+				'gradient-sacred': 'var(--gradient-sacred)',
+				'gradient-celestial': 'var(--gradient-celestial)',
+				'gradient-kaaba': 'var(--gradient-kaaba)'
+			},
+			boxShadow: {
+				'sacred': 'var(--shadow-sacred)',
+				'gentle': 'var(--shadow-gentle)',
+				'elevated': 'var(--shadow-elevated)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

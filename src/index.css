@@ -2,39 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Spiritual Smart Makkah Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
 
 @layer base {
   :root {
+    /* Spiritual color palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep blue - spiritual, trustworthy */
+    --primary: 215 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 215 85% 35%;
+    --primary-dark: 215 85% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft green - Islamic heritage */
+    --secondary: 142 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 45% 55%;
+    --secondary-dark: 142 45% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gentle earth tones */
+    --muted: 35 15% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 25% 94%;
+    --accent-foreground: 215 25% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 15% 88%;
+    --input: 35 15% 92%;
+    --ring: 215 85% 25%;
+
+    /* Spiritual gradients */
+    --gradient-spiritual: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-sacred: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-light)) 100%);
+    --gradient-celestial: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-kaaba: linear-gradient(45deg, hsl(var(--primary-dark)) 0%, hsl(var(--primary)) 50%, hsl(var(--secondary-dark)) 100%);
+
+    /* Sacred geometry shadows */
+    --shadow-sacred: 0 8px 32px hsl(var(--primary) / 0.15);
+    --shadow-gentle: 0 4px 16px hsl(var(--primary) / 0.08);
+    --shadow-elevated: 0 12px 48px hsl(var(--primary) / 0.2);
+
+    /* Islamic ornament colors */
+    --gold-accent: 45 85% 55%;
+    --gold-light: 45 85% 65%;
+
+    /* Typography scale */
+    --font-arabic: 'Amiri', serif;
+    --font-primary: 'Inter', sans-serif;
 
     --radius: 0.5rem;
 
@@ -100,6 +126,94 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-primary;
+  }
+
+  /* Islamic geometric patterns */
+  .pattern-geometric::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 2px 2px, hsl(var(--primary) / 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .pattern-stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 50% 50%, hsl(var(--gold-accent) / 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Sacred animations */
+  .animate-glow {
+    animation: sacred-glow 3s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+
+  @keyframes sacred-glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(var(--secondary) / 0.5);
+    }
+  }
+
+  @keyframes gentle-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Spiritual glass effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* Arabic text support */
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Custom scrollbar */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
   }
 }
