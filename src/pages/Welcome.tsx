@@ -5,6 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { Globe, Users, BarChart3 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import islamicPattern from "@/assets/islamic-pattern.jpg";
+import manafieLogo from "@/assets/manafie-logo.png";
 
 const Welcome = () => {
   const [isArabic, setIsArabic] = useState(false);
@@ -63,10 +64,12 @@ const Welcome = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-6">
         {/* App Logo & Title */}
         <div className="text-center mb-12 animate-float">
-          <div className="w-24 h-24 mx-auto mb-6 bg-gradient-spiritual rounded-3xl flex items-center justify-center shadow-sacred">
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center">
-              <div className="w-8 h-8 bg-gradient-kaaba rounded-lg"></div>
-            </div>
+          <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+            <img 
+              src={manafieLogo} 
+              alt="Manafie Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
           
           <h1 className="text-4xl font-bold mb-2 bg-gradient-spiritual bg-clip-text text-transparent">
