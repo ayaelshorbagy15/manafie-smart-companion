@@ -1,4 +1,9 @@
-# Welcome to your Lovable project
+🕌 Manafie | منافع
+Smart Makkah Companion App
+Where spiritual journeys meet intelligent design
+
+📌 Project Summary
+Manafie is an AI-powered mobile platform built for Makkah’s visitors and infrastructure stakeholders. It enhances the pilgrimage and city experience with personalized planning tools, smart routing, cost optimization, and real-time infrastructure insights.
 
 ## Project info
 
